@@ -1,0 +1,1 @@
+Nesse folder você pode achar "asset_placement_template" que é basicamente um exemplo de como você pode montar o mapa e as layers dentro do jogo, esse é um arquivo .ase (aseprite) onde você pode abrir e ver como eu montei as coisas.
