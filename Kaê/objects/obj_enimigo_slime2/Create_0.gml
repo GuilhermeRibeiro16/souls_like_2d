@@ -1,5 +1,7 @@
 // Inherit the parent event
 event_inherited();
+//dano no player
+dano_valor = 2;
 //distacia do ataque
 range = 30;
 //distancia
@@ -28,13 +30,41 @@ estado_attack.roda = function()
 	{
 		var _dir = point_direction(x,y, alvo.x, alvo.y);
 		//se movendo na direção do player
-		x += lengthdir_x(1, dir)
-		y += lengthdir_y(1, dir)
+		var _x = lengthdir_x(1, dir)
+		var _y = lengthdir_y(1, dir)
+		//se movendo se não tem parede
+		if (!place_meeting(x + _x, y + _y, obj_colisor))
+		   {
+				x += _x;
+				y += _y;
+				//mudando a posição do dano para quando cair
+				if (instance_exists(dano))
+				{
+					dano.x = x;
+					dano.y = y;
+				
+				}
+		   }
+		   //checando o dano
+		   if (dano == noone)
+		   {
+		   dano = instance_create_depth(x, y, depth, obj_dano_inimigo);
+		   dano.dano = dano_valor;
+		   }
 	}
 	if (image_index >= image_number - 0.2)
 	{
 		troca_estado(estado_hunt);
 	}
 }
+estado_attack.finaliza = function()
+{
+	if (instance_exists(dano))
+	{
+		instance_destroy(dano);
+	}
+	dano = noone;
+}
+
 //iniciando estado idle
 inicia_estado(estado_idle);

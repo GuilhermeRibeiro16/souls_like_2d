@@ -3,8 +3,10 @@
 tempo_estado = game_get_speed(gamespeed_fps) + 15;
 timer_estado = tempo_estado;
 //CRIANDO DISTANCIA DE ATACK
-range = 10;
-
+range = 15;
+//criando o dano
+dano = noone;
+dano_valor = 1;
 //criando estrutura slime diferente
 sprite =
 {
@@ -118,7 +120,7 @@ estado_hunt.roda = function()
 		//checando
 		var _slime = instance_find( object_index, i)
 		if (_slime == id)
-		{
+		{   
 			//vazio
 		}
 		else
@@ -132,7 +134,10 @@ estado_hunt.roda = function()
 				//ajudando
 				with(_slime)
 				{
+					if (estado_atual != estado_death)
+					{
 					troca_estado(estado_hunt);
+					}
 				}
 			}
 		}
@@ -147,6 +152,13 @@ estado_attack.inicia = function()
 }
 estado_attack.roda = function()
 {
+	//criando o dano
+	if (dano == noone && image_index >= 7)
+	{
+		dano = instance_create_depth(x, y, depth, obj_dano_inimigo);
+		//passa
+		dano.dano = dano_valor;
+	}
 	//rempo de ataque
 	if (image_index >= image_number - .5)
 	{
@@ -156,6 +168,12 @@ estado_attack.roda = function()
 estado_attack.finaliza = function()
 {
 	alvo = noone;
+	if (instance_exists(dano))
+	{
+		//destruindo o dano
+		instance_destroy(dano);
+	}
+	dano = noone;
 }
 #endregion
 
@@ -197,7 +215,8 @@ estado_death.inicia = function()
 {
 	sprite_index = sprite.death;
 	image_index = 0;
-	
+	//mudando a maskara de colisão não hora da morte para não empurra
+	mask_index = spr_mask_dead;
 	dead = true;
 }
 estado_death.roda = function()

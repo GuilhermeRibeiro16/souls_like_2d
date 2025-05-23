@@ -37,6 +37,9 @@
     "name":"spr_invocador_idle",
     "path":"sprites/spr_invocador_idle/spr_invocador_idle.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_invocador_idle",
+    "path":"sprites/spr_invocador_idle/spr_invocador_idle.yy",
+  },
   "visible":true,
 }

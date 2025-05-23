@@ -1,3 +1,6 @@
+//dano
+dano = noone;
+dano_valor = 1;
 //olhando para o lado certo
 xscale = 1;
 //deixando morto permanente 
