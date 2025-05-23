@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_decoracao_pai",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_decoracao_pai",
+  "overriddenProperties":[],
+  "parent":{
+    "name":"entidade pai",
+    "path":"folders/Objects/entidade pai.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_colisor",
+    "path":"objects/obj_colisor/obj_colisor.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"transparente","filters":[],"listItems":[],"multiselect":false,"name":"transparente","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+  ],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":null,
+  "spriteMaskId":{
+    "name":"spr_arvore1",
+    "path":"sprites/spr_arvore1/spr_arvore1.yy",
+  },
+  "visible":true,
+}
